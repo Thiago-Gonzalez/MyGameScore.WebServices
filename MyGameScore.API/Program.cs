@@ -1,4 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using MyGameScore.Infrastructure.Persistence;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("MyGameScoreCs");
+builder.Services.AddDbContext<MyGameScoreDbContext>(options => options.UseSqlServer(connectionString));
 
 // Add services to the container.
 
