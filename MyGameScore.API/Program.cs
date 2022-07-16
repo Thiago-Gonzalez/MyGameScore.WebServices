@@ -1,5 +1,8 @@
+using FluentValidation.AspNetCore;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
+using MyGameScore.Application.Commands.CreateMatch;
+using MyGameScore.Application.Validators;
 using MyGameScore.Core.Repositories;
 using MyGameScore.Infrastructure.Persistence;
 using MyGameScore.Infrastructure.Persistence.Repositories;
@@ -13,7 +16,11 @@ builder.Services.AddDbContext<MyGameScoreDbContext>(options => options.UseSqlSer
 builder.Services.AddScoped<IMatchRepository, MatchRepository>();
 builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateMatchCommandValidator>());
+
+builder.Services.AddMediatR(typeof(CreateMatchCommand));
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
