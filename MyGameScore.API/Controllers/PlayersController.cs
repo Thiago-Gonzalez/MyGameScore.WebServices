@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using MyGameScore.Application.Commands.CreatePlayer;
 using MyGameScore.Application.Commands.LoginPlayer;
 using MyGameScore.Application.Queries.GetPlayer;
+using MyGameScore.Application.Queries.GetPlayerMatches;
 using MyGameScore.Application.Queries.GetPlayerStats;
 
 namespace MyGameScore.API.Controllers
@@ -42,6 +43,17 @@ namespace MyGameScore.API.Controllers
             if (stats == null) return NotFound();
 
             return Ok(stats);
+        }
+
+        // api/players/1/matches
+        [HttpGet("{id}/matches")]
+        public async Task<IActionResult> GetPlayerMatches(int id)
+        {
+            var query = new GetPlayerMatchesQuery(id);
+
+            var matches = await _mediator.Send(query);
+
+            return Ok(matches);
         }
 
         // api/players
