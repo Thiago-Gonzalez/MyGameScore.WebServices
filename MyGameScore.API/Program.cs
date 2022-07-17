@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using MyGameScore.API.Filters;
 using MyGameScore.Application.Commands.CreateMatch;
 using MyGameScore.Application.Validators;
 using MyGameScore.Core.Repositories;
@@ -23,7 +24,7 @@ builder.Services.AddScoped<IMatchRepository, MatchRepository>();
 builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 
-builder.Services.AddControllers()
+builder.Services.AddControllers(options => options.Filters.Add(typeof(ValidationFilter)))
     .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateMatchCommandValidator>());
 
 builder.Services.AddMediatR(typeof(CreateMatchCommand));
