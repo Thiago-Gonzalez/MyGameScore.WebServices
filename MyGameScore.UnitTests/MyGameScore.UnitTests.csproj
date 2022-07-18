@@ -27,4 +27,8 @@
     <ProjectReference Include="..\MyGameScore.Core\MyGameScore.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Application\Queries\" />
+  </ItemGroup>
+
 </Project>
