@@ -20,7 +20,9 @@ namespace MyGameScore.Infrastructure.Persistence.Repositories
 
         public async Task<List<Match>> GetAllAsync()
         {
-            return await _dbContext.Matches.ToListAsync();
+            return await _dbContext.Matches
+                .Include(m => m.Player)
+                .ToListAsync();
         }
 
         public async Task<List<Match>> GetPlayerMatchesAsync(int idPlayer)
