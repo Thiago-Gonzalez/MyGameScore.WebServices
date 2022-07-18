@@ -27,7 +27,10 @@ namespace MyGameScore.Infrastructure.Persistence.Repositories
 
         public async Task<List<Match>> GetPlayerMatchesAsync(int idPlayer)
         {
-            var matches = await _dbContext.Matches.Where(m => m.IdPlayer == idPlayer).ToListAsync();
+            var matches = await _dbContext.Matches
+                .Where(m => m.IdPlayer == idPlayer)
+                .Include(m => m.Player)
+                .ToListAsync();
 
             if (matches == null) return null;
 
