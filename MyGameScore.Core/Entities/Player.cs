@@ -16,6 +16,11 @@
         public string Password { get; private set; }
         public List<Match> Matches { get; private set; }
 
+        public void SetMatches(List<Match> matches)
+        {
+            Matches = matches;
+        }
+
         public int GetGamesPlayed()
         {
             return Matches.Count;
