@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGameScore.API", "MyGameScore.API\MyGameScore.API.csproj", "{C23931B6-EFDA-4BC5-A298-E343A11318D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyGameScore.API", "MyGameScore.API\MyGameScore.API.csproj", "{C23931B6-EFDA-4BC5-A298-E343A11318D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyGameScore.Core", "MyGameScore.Core\MyGameScore.Core.csproj", "{E4343186-B7C8-4BDB-97A9-AC80F5B10FB7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyGameScore.Infrastructure", "MyGameScore.Infrastructure\MyGameScore.Infrastructure.csproj", "{B3848892-8963-404B-BA7B-8E386B313A12}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyGameScore.Application", "MyGameScore.Application\MyGameScore.Application.csproj", "{EF6BCDCF-6942-4722-86D6-F0FED42C7C73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{C23931B6-EFDA-4BC5-A298-E343A11318D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C23931B6-EFDA-4BC5-A298-E343A11318D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C23931B6-EFDA-4BC5-A298-E343A11318D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4343186-B7C8-4BDB-97A9-AC80F5B10FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4343186-B7C8-4BDB-97A9-AC80F5B10FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4343186-B7C8-4BDB-97A9-AC80F5B10FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4343186-B7C8-4BDB-97A9-AC80F5B10FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3848892-8963-404B-BA7B-8E386B313A12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3848892-8963-404B-BA7B-8E386B313A12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3848892-8963-404B-BA7B-8E386B313A12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3848892-8963-404B-BA7B-8E386B313A12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF6BCDCF-6942-4722-86D6-F0FED42C7C73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF6BCDCF-6942-4722-86D6-F0FED42C7C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF6BCDCF-6942-4722-86D6-F0FED42C7C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF6BCDCF-6942-4722-86D6-F0FED42C7C73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
