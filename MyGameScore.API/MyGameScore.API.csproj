@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.7">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -20,6 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MyGameScore.Application\MyGameScore.Application.csproj" />
+    <ProjectReference Include="..\MyGameScore.Core\MyGameScore.Core.csproj" />
     <ProjectReference Include="..\MyGameScore.Infrastructure\MyGameScore.Infrastructure.csproj" />
   </ItemGroup>
 
