@@ -25,7 +25,7 @@ namespace MyGameScore.Application.Commands.LoginPlayer
 
             var token = _authService.GenerateJwtToken(player.Email);
 
-            return new LoginPlayerViewModel(player.Email, token);
+            return new LoginPlayerViewModel(player.Id, player.Email, token);
         }
     }
 }
