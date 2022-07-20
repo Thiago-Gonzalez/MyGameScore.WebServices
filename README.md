@@ -1,7 +1,7 @@
 # myGameScore
 <p>É um projeto web no qual jogadores de basquete podem registrar suas partidas da temporada, através do menu "Lancar pontos", inserindo a data da partida e a pontuação, para então acompanhar suas estatatísticas através do menu "Ver resultados", no qual poderá ver dados como quantidade de jogos disputados, total de pontos marcados na temporada, média de pontos por jogo, maior e menor pontuação por jogo e quantidade de vezes que bateu o próprio recorde.</p>
 <p>Além disso, jogadores podem ver seu histórico de partidas através do menu "Ver partidas" e ver uma tabela contendo as maiores pontuações já registradas, através do menu "Quadro de pontuações".</p>
-<p>Dessa forma, incluindo as opções de "Ver partidas" e "Quadro de pontuações" o jogador não precisa se preocupar em lembras de todas as suas pontuações quando for analisar suas estatísticas e também pode comparar suas pontuações com as dos demais jogadores, sendo também um incentivo para buscar pontuações maiores, afim de colocar seu nome no topo da lista de maiores pontuações.</p>
+<p>Dessa forma, incluindo as opções de "Ver partidas" e "Quadro de pontuações" o jogador não precisa se preocupar em lembrar de todas as suas pontuações quando for analisar suas estatísticas e também pode comparar suas pontuações com as dos demais jogadores, sendo também um incentivo para buscar pontuações maiores, afim de colocar seu nome no topo da lista de maiores pontuações.</p>
 <p>Para desenvolvimento do projeto foram utilizadas as tecnologias:</p>
 <h2>Front-end:</h2>
 <ul>
@@ -52,6 +52,13 @@
       <p>\MyGameScore.WebServices\MyGameScore.Infrastructure> $ dotnet add package EntityFrameworkCore.Tools</p>
       <p>\MyGameScore.WebServices\MyGameScore.API> $ dotnet add package Microsoft.EntityFrameworkCore.SqlServer</p>
       <p>\MyGameScore.WebServices\MyGameScore.API> $ dotnet add package EntityFrameworkCore.Tools</p>
+</ol>
+<h2>Testando o back-end via Swagger (https://localhost:9000/swagger/index.html (ou qualquer outra plataforma de testes de API)):</h2>
+<ol>
+  <li>Antes de qualquer coisa, é necessário criar uma conta: realize uma requisição http post para a rota api/players e informe seu nome, email e uma senha contendo pelo menos 8 dígitos, sendo pelos menos um caractere especial, uma letra maiúscula, uma minúscula e um número</li>
+  <li>Em seguida, realize o login através do método http put na rota api/players/login, informando seu email e senha, dessa forma será gerado um token, copie-o</li>
+  <li>Por fim, para finalizar a autenticação, no Swagger, clique no menu "Authorize" localizado na parte superior direita da página e em "Value" preencha com "Bearer coleAquiOToeken" (sem nenhuma aspa, apenas para exemplificar => Bearer + espaço em branco + token), depois clique em Authorize</li>
+  <li>Pronto, agora você já está autenticado e já pode realizar quaisquer requisições nas demais rotas da api</li>
 </ol>
 
 <p>OBS.: Para o desenvolvimento do projeto, meus maiores desafios foram com o Front-end, no qual tive problemas com redirecionamento de rotas, devido a isso, o Front ainda se encontra com alguns problemas, mas com um pouco de paciência, poderá tirar um bom proveito!</p>
