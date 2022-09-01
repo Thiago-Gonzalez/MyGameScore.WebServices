@@ -73,4 +73,29 @@
   <li>Por fim, realize o apply das migrations ($ dotnet ef database update -s ../MyGameScore.API/MyGameScore.API.csproj)</li>
   <li>Execute a aplicação com $ dotnet run (dentro da pasta MyGameScore.API)</li>
 </ui>
+  <h2>Preview:</h2>
+  </h4>Swagger:</h4>
+  <img src="https://user-images.githubusercontent.com/80121288/187813320-cb09f630-10ab-4168-a6eb-01d8ccc194ad.png"/>
+  
+  <h4>Lançar Pontos:</h4>
+  <img src="https://user-images.githubusercontent.com/80121288/187813563-5c4f95a3-fe6d-4d71-a47c-03f225d365d1.png" />
+  
+  <h4>Suas Partidas:</h4>
+  <img src="https://user-images.githubusercontent.com/80121288/187814038-19fdbb3c-7700-444b-a412-7091a3697ea0.png" />
+  
+  <h4>Ver Resultados:</h4>
+  <img src="https://user-images.githubusercontent.com/80121288/187814078-3cee5670-d9ad-42c1-aefc-0ba4302a5c50.png" />
+  
+  <h4>Quadro de Pontuações:</h4>
+  <img src="https://user-images.githubusercontent.com/80121288/187814146-02d2a1ca-ded5-4f0d-aee1-d785aa41db6e.png" />
+  
+  <h4>Login:</h4>
+  <img src="https://user-images.githubusercontent.com/80121288/187813795-0c39b25b-3fbc-492f-8c1a-f4de682f40dd.png" />
+  
+  <h4>Cadastro:</h4>
+  <img src="https://user-images.githubusercontent.com/80121288/187813832-19231db9-370a-49c1-b408-43a604f5cbc3.png" />
+  
+  <h4>NotFound:</h4>
+  <img src="https://user-images.githubusercontent.com/80121288/187813966-fbc6aa44-9ec1-4388-8d0f-a544df5d7307.png" />
+  
 <p align="center">© Thiago González</p>
