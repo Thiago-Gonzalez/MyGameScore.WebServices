@@ -47,5 +47,18 @@ namespace MyGameScore.Infrastructure.Persistence.Repositories
 
             return match;    
         }
+
+        public async Task DeleteMatchAsync(int id)
+        {
+            var match = await GetByIdAsync(id);
+
+            _dbContext.Matches.Remove(match);
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task SaveChangesAsync()
+        {
+            await _dbContext.SaveChangesAsync();
+        }
     }
 }

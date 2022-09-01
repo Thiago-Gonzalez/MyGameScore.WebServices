@@ -23,6 +23,8 @@ namespace MyGameScore.Application.Queries.GetPlayerStats
 
             if (player == null) return null;
 
+            if (matches.Count == 0) return new PlayerStatsViewModel(0, 0, 0, 0, 0, 0);
+
             return new PlayerStatsViewModel(
                 player.GetGamesPlayed(), 
                 player.GetTotalScore(),

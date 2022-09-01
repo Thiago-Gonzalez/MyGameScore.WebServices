@@ -13,5 +13,11 @@
         public Player Player { get; private set; }
         public DateTime Date { get; private set; }
         public int Score { get; private set; }
+
+        public void Update(DateTime date, int score) 
+        {
+            Date = date;
+            Score = score;
+        }
     }
 }

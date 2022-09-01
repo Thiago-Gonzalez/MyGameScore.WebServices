@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyGameScore.Application.Commands.CreateMatch;
+using MyGameScore.Application.Commands.DeleteMatch;
+using MyGameScore.Application.Commands.UpdateMatch;
 using MyGameScore.Application.Queries.GetAllMatches;
 using MyGameScore.Application.Queries.GetMatchById;
 
@@ -48,6 +50,26 @@ namespace MyGameScore.API.Controllers
             var id = await _mediator.Send(command);
 
             return CreatedAtAction(nameof(GetById), new { id = id }, command);
+        }
+
+        // api/matches/1
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put([FromBody] UpdateMatchCommand command) 
+        {
+            await _mediator.Send(command);
+
+            return NoContent();
+        }
+
+        // api/matches/1
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id) 
+        {
+            var command = new DeleteMatchCommand(id);
+
+            await _mediator.Send(command);
+
+            return NoContent();
         }
     }
 }

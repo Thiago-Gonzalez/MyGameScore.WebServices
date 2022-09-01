@@ -8,5 +8,7 @@ namespace MyGameScore.Core.Repositories
         Task<List<Match>> GetPlayerMatchesAsync(int idPlayer);
         Task<Match> GetByIdAsync(int id);
         Task AddAsync(Match match);
+        Task DeleteMatchAsync(int id);
+        Task SaveChangesAsync();
     }
 }
