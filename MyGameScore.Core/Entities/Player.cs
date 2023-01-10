@@ -48,7 +48,7 @@
 
         public int GetTimesRecordWasBeaten()
         {
-            var scores = Matches.Select(m => m.Score).ToList();
+            var scores = Matches.OrderBy(m => m.Date).Select(m => m.Score).ToList();
             int timesRecordWasBeaten = 0;
             int record = scores[0];
 
