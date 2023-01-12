@@ -6,6 +6,7 @@ using MyGameScore.Application.Commands.DeleteMatch;
 using MyGameScore.Application.Commands.UpdateMatch;
 using MyGameScore.Application.Queries.GetAllMatches;
 using MyGameScore.Application.Queries.GetMatchById;
+using MyGameScore.Application.Queries.GetTopHighScoreMatches;
 
 namespace MyGameScore.API.Controllers
 {
@@ -70,6 +71,17 @@ namespace MyGameScore.API.Controllers
             await _mediator.Send(command);
 
             return NoContent();
+        }
+
+        // api/matches/tophighscorematches/10
+        [HttpGet("tophighscorematches/{quantity}")]
+        public async Task<IActionResult> GetTopHighScoreMatches(int quantity)
+        {
+            var query = new GetTopHighScoreMatchesQuery(quantity);
+
+            var topMatches = await _mediator.Send(query);
+
+            return Ok(topMatches);
         }
     }
 }
