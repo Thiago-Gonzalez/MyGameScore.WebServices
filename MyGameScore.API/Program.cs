@@ -22,6 +22,7 @@ builder.Services.AddDbContext<MyGameScoreDbContext>(options => options.UseSqlSer
 // Add services to the container.
 builder.Services.AddScoped<IMatchRepository, MatchRepository>();
 builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
+builder.Services.AddScoped<ISeasonRepository, SeasonRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 
 builder.Services.AddControllers(options => options.Filters.Add(typeof(ValidationFilter)))
