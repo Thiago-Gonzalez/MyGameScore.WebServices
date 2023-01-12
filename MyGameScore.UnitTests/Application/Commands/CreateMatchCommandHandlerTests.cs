@@ -2,6 +2,7 @@
 using MyGameScore.Application.Commands.CreateMatch;
 using MyGameScore.Core.Repositories;
 using MyGameScore.Core.Entities;
+using MyGameScore.Application.Commands.CreateSeason;
 
 namespace MyGameScore.UnitTests.Application.Commands
 {
@@ -12,15 +13,17 @@ namespace MyGameScore.UnitTests.Application.Commands
         {
             // Arrange
             var matchRepositoryMock = new Mock<IMatchRepository>();
+            var seasonRepositoryMock = new Mock<ISeasonRepository>();
 
             var createMatchCommand = new CreateMatchCommand
             {
                 Date = DateTime.Now,
                 Score = 22,
-                IdPlayer = 1
+                IdPlayer = 1,
+                IdSeason = 1
             };
 
-            var createMatchCommandHandler = new CreateMatchCommandHandler(matchRepositoryMock.Object);
+            var createMatchCommandHandler = new CreateMatchCommandHandler(matchRepositoryMock.Object, seasonRepositoryMock.Object);
 
             // Act
             var id = await createMatchCommandHandler.Handle(createMatchCommand, new CancellationToken());

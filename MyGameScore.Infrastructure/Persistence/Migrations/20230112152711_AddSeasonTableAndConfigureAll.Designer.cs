@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyGameScore.Infrastructure.Persistence;
 
@@ -11,9 +12,10 @@ using MyGameScore.Infrastructure.Persistence;
 namespace MyGameScore.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(MyGameScoreDbContext))]
-    partial class MyGameScoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230112152711_AddSeasonTableAndConfigureAll")]
+    partial class AddSeasonTableAndConfigureAll
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

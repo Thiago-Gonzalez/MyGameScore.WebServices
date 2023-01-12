@@ -1,8 +1,8 @@
 ﻿namespace MyGameScore.Application.ViewModels
 {
-    public class PlayerStatsViewModel
+    public class SeasonStatsViewModel
     {
-        public PlayerStatsViewModel(int gamesPlayed, int totalScore, double scoreAverage, int highestScore, int lowestScore, int timesRecordWasBeaten)
+        public SeasonStatsViewModel(int gamesPlayed, int totalScore, double scoreAverage, int highestScore, int lowestScore, int timesRecordWasBeaten)
         {
             GamesPlayed = gamesPlayed;
             TotalScore = totalScore;

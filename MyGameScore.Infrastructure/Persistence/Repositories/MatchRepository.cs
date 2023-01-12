@@ -21,14 +21,16 @@ namespace MyGameScore.Infrastructure.Persistence.Repositories
         public async Task<List<Match>> GetAllAsync()
         {
             return await _dbContext.Matches
+                .Include(m => m.Season)
                 .Include(m => m.Player)
                 .ToListAsync();
         }
 
-        public async Task<List<Match>> GetPlayerMatchesAsync(int idPlayer)
+        public async Task<List<Match>> GetMatchesBySeasonAsync(int idSeason)
         {
             var matches = await _dbContext.Matches
-                .Where(m => m.IdPlayer == idPlayer)
+                .Where(m => m.IdSeason == idSeason)
+                .Include(m => m.Season)
                 .Include(m => m.Player)
                 .ToListAsync();
 
@@ -37,9 +39,23 @@ namespace MyGameScore.Infrastructure.Persistence.Repositories
             return matches;
         }
 
+        public async Task<List<Match>> GetMatchesByPlayerAsync(int idPlayer)
+        {
+            var matches = await _dbContext.Matches
+                .Where(m => m.IdPlayer == idPlayer)
+                .Include(m => m.Season)
+                .Include(m => m.Player)
+                .ToListAsync();
+            
+            if (matches == null) return null;
+
+            return matches;
+        }
+
         public async Task<Match> GetByIdAsync(int id)
         {
             var match = await _dbContext.Matches
+                .Include(m => m.Season)
                 .Include(m => m.Player)
                 .SingleOrDefaultAsync(m => m.Id == id);
 

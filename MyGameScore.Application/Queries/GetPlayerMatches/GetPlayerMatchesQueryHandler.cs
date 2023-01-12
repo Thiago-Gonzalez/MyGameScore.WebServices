@@ -13,7 +13,7 @@ namespace MyGameScore.Application.Queries.GetPlayerMatches
         }
         public async Task<List<MatchViewModel>> Handle(GetPlayerMatchesQuery request, CancellationToken cancellationToken)
         {
-            var playerMatches = await _matchRepository.GetPlayerMatchesAsync(request.PlayerId);
+            var playerMatches = await _matchRepository.GetMatchesByPlayerAsync(request.PlayerId);
 
             var playerMatchesViewModel = playerMatches
                 .Select(pm => new MatchViewModel(pm.Id, pm.Date, pm.Score, pm.Player.Name))

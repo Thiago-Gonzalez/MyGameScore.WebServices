@@ -12,6 +12,7 @@ namespace MyGameScore.Infrastructure.Persistence
 
         public DbSet<Match> Matches { get; set; }
         public DbSet<Player> Players { get; set; }
+        public DbSet<Season> Seasons { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -12,8 +12,14 @@ namespace MyGameScore.Infrastructure.Persistence.Configurations
                 .HasKey(m => m.Id);
 
             builder
+                .HasOne(m => m.Season)
+                .WithMany(s => s.Matches)
+                .HasForeignKey(m => m.IdSeason)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder
                 .HasOne(m => m.Player)
-                .WithMany(m => m.Matches)
+                .WithMany(p => p.Matches)
                 .HasForeignKey(m => m.IdPlayer)
                 .OnDelete(DeleteBehavior.Restrict);
         }
