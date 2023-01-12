@@ -5,7 +5,7 @@ using MyGameScore.Application.Commands.CreatePlayer;
 using MyGameScore.Application.Commands.LoginPlayer;
 using MyGameScore.Application.Queries.GetPlayer;
 using MyGameScore.Application.Queries.GetPlayerMatches;
-using MyGameScore.Application.Queries.GetPlayerStats;
+using MyGameScore.Application.Queries.GetPlayerSeasons;
 
 namespace MyGameScore.API.Controllers
 {
@@ -32,17 +32,15 @@ namespace MyGameScore.API.Controllers
             return Ok(player);
         }
 
-        // api/players/1/stats
+        // api/players/1/seasons
         [HttpGet("{id}/stats")]
-        public async Task<IActionResult> GetStats(int id)
+        public async Task<IActionResult> GetPlayerSeasons(int id)
         {
-            var query = new GetPlayerStatsQuery(id);
+            var query = new GetPlayerSeasonsQuery(id);
 
-            var stats = await _mediator.Send(query);
+            var seasons = await _mediator.Send(query);
 
-            if (stats == null) return NotFound();
-
-            return Ok(stats);
+            return Ok(seasons);
         }
 
         // api/players/1/matches
