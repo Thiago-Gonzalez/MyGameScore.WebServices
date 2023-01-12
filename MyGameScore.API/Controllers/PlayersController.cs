@@ -33,7 +33,7 @@ namespace MyGameScore.API.Controllers
         }
 
         // api/players/1/seasons
-        [HttpGet("{id}/stats")]
+        [HttpGet("{id}/seasons")]
         public async Task<IActionResult> GetPlayerSeasons(int id)
         {
             var query = new GetPlayerSeasonsQuery(id);
