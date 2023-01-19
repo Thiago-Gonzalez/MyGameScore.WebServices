@@ -1,7 +1,6 @@
 # myGameScore
-<p>É um projeto web no qual jogadores de basquete podem registrar suas partidas, através do menu "Lancar pontos", inserindo a data da partida e a pontuação, para então acompanhar suas estatísticas através do menu "Ver resultados", no qual poderá ver dados como quantidade de jogos disputados, total de pontos marcados na temporada, média de pontos por jogo, maior e menor pontuação por jogo e quantidade de vezes que bateu o próprio recorde.</p>
-<p>Além disso, jogadores podem ver seu histórico de partidas através do menu "Ver partidas", no qual podem também editar ou excluir partidas, e ver uma tabela contendo as 10 maiores pontuações entre todos os players, através do menu "Quadro de pontuações".</p>
-<p>Dessa forma, incluindo as opções de "Ver partidas" e "Quadro de pontuações" o jogador não precisa se preocupar em lembrar de todas as suas pontuações quando for analisar suas estatísticas e também pode comparar suas pontuações com as dos demais jogadores, sendo também um incentivo para buscar pontuações maiores, afim de colocar seu nome no topo da lista de maiores pontuações.</p>
+<p>É um projeto web no qual jogadores de basquete podem registrar suas partidas por temporada, através do menu "Ver partidas", no qual poderá cadastrar, editar ou excluir e ver histórico de temporadas e partidas, além de ver suas estatísticas em cada temporada, como quantidade de jogos disputados, total de pontos marcados na temporada, média de pontos por jogo, maior e menor pontuação por jogo e quantidade de vezes que bateu o próprio recorde.</p>
+<p>Além disso, jogadores podem ver uma tabela contendo as 10 maiores pontuações entre todos os players, através do menu "Quadro de pontuações".</p>
 <p>Para desenvolvimento do projeto foram utilizadas as tecnologias:</p>
 <h2>Front-end:</h2>
 <ul>
@@ -52,7 +51,7 @@
 <ol>
   <li>Antes de qualquer coisa, é necessário criar uma conta: realize uma requisição http post para a rota api/players e informe seu nome, email e uma senha contendo pelo menos 8 dígitos, sendo pelos menos um caractere especial, uma letra maiúscula, uma minúscula e um número</li>
   <li>Em seguida, realize o login através do método http put na rota api/players/login, informando seu email e senha, dessa forma será gerado um token, copie-o</li>
-  <li>Por fim, para finalizar a autenticação, no Swagger, clique no menu "Authorize" localizado na parte superior direita da página e em "Value" preencha com "Bearer coleAquiOToeken" (sem aspas, apenas para exemplificar => Bearer token), depois clique em Authorize</li>
+  <li>Por fim, para finalizar a autenticação, no Swagger, clique no menu "Authorize" localizado na parte superior direita da página e em "Value" preencha com "Bearer coleAquiOToken" (sem aspas, apenas para exemplificar => Bearer token), depois clique em Authorize</li>
   <li>Pronto, agora você já está autenticado e já pode realizar quaisquer requisições nas demais rotas da api</li>
 </ol>
 <h2>Nota: Rodando o back-end em ambiente Linux (necessário versão com suporte ao .NET Core 6 e SQL Server - recomendado Ubuntu 20.04):</h2>
@@ -77,14 +76,17 @@
   </h4>Swagger:</h4>
   <img src="https://user-images.githubusercontent.com/80121288/187813320-cb09f630-10ab-4168-a6eb-01d8ccc194ad.png"/>
   
-  <h4>Lançar Pontos:</h4>
-  <img src="https://user-images.githubusercontent.com/80121288/187813563-5c4f95a3-fe6d-4d71-a47c-03f225d365d1.png" />
-  
   <h4>Suas Partidas:</h4>
-  <img src="https://user-images.githubusercontent.com/80121288/187814038-19fdbb3c-7700-444b-a412-7091a3697ea0.png" />
+  <img src="https://user-images.githubusercontent.com/80121288/212367980-e7f3c7f9-601a-4712-b0ee-4860a9dc29f3.png"/>
   
-  <h4>Ver Resultados:</h4>
-  <img src="https://user-images.githubusercontent.com/80121288/187814078-3cee5670-d9ad-42c1-aefc-0ba4302a5c50.png" />
+  <h4>Adicionando Partida:</h4>
+  <img src="https://user-images.githubusercontent.com/80121288/212368485-51f7ffb0-90b4-4012-8c19-36207fc7fe42.png" />
+  
+  <h4>Editando Partida:</h4>
+  <img src="https://user-images.githubusercontent.com/80121288/212368646-783a9d35-996e-4ed7-b2a2-909ebbcbdd45.png" />
+  
+  <h4>Excluindo Partida:</h4>
+  <img src="https://user-images.githubusercontent.com/80121288/212368810-151eac5a-b521-45d0-944d-e65c7ad43aa9.png" />
   
   <h4>Quadro de Pontuações:</h4>
   <img src="https://user-images.githubusercontent.com/80121288/187814146-02d2a1ca-ded5-4f0d-aee1-d785aa41db6e.png" />
